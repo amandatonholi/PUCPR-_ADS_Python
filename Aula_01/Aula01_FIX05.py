@@ -24,5 +24,5 @@ if tipo_pgto == 's' :
     valor_desconto = valor_final * percent_desconto;
     valor_final = valor_final - valor_desconto;
     print("O valor final recebeu um desconto de 15% totalizando: ", valor_final)
-else tipo_pgto == 'n':
+elif tipo_pgto == 'n' :
     print("O valor final irá se manter sem desconto: ", valor_final)
