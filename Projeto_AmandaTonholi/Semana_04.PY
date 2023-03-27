@@ -6,8 +6,18 @@ import time
 #Semana 02 - Criação do Menu
 
 #___________________________________________________________________________________________________________________________________
-# Menu Principal
+#Função de Estudantes
 
+lista_de_alunos = []
+
+def incluir_aluno(nome_do_aluno):
+   lista_de_alunos.append(nome_do_aluno)
+
+def listar_alunos ():
+    print(lista_de_alunos)
+
+#___________________________________________________________________________________________________________________________________
+# Menu Principal
 
 while True:
 
@@ -56,16 +66,7 @@ while True:
     else:
         texto_menu_principal = "Valor Inválido, Tente Novamente"
 
-    #___________________________________________________________________________________________________________________________________
-    #Função Listagem de alunos
-    lista_de_alunos = []
 
-    def incluir_aluno(nome_do_aluno):
-    #    lista_de_alunos = []
-        lista_de_alunos.append(nome_do_aluno)
-
-    def listar_alunos ():
-        print(lista_de_alunos)
     #___________________________________________________________________________________________________________________________________
     # Menu Operacional
 
@@ -79,22 +80,33 @@ while True:
         print("0. Voltar Menu Anterior")
         opcao_menu_operacional = int(input("\nOpção desejada: "))
 
+        #inclusão de alunos na lista de registros
         if opcao_menu_operacional==1: 
             nome_do_aluno = input("\nInsira nome do aluno a ser registrado: ")
             incluir_aluno(nome_do_aluno)
             print("Registro Incluído com Sucesso")
-            listar_alunos()
-            
+            retorno_ao_menu = input("Deseja voltar ao menu anterior? Digite apenas a inicial s-sim e n-não")
+            if retorno_ao_menu == "s": 
+                
+            else:
+
+        #opção de listagem dos alunos 
         elif opcao_menu_operacional==2:
-            print("\nLegal, logo iremos descobrir como fazer isso, por enquanto é isso! Obrigada.\n")
+            print("Os alunos registrados atualmente na base são: \n")
+            listar_alunos()
+
+        #opção de atualização dos dados do aluno
         elif opcao_menu_operacional==3:
             time.sleep(1)
             print("Em Desenvolvimento")
             break
+        
+        #opção de excluir registro do aluno da lista 
         elif opcao_menu_operacional==4:
             time.sleep(1)
             print("Em Desenvolvimento")
             break
+
         elif opcao_menu_operacional==5:
             time.sleep(1)
             print("Em Desenvolvimento")
@@ -111,7 +123,3 @@ print("\nEncerrando Aplicação...")
 time.sleep(1) 
 print("\nAplicação Encerrada!\n")
 
-def incluir_aluno(nome_do_aluno):
-    lista_de_alunos = []
-    lista_de_alunos.append(nome_do_aluno)
-    print(lista_de_alunos)
