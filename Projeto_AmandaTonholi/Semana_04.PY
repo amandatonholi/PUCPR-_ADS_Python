@@ -57,6 +57,16 @@ while True:
         texto_menu_principal = "Valor Inválido, Tente Novamente"
 
     #___________________________________________________________________________________________________________________________________
+    #Função Listagem de alunos
+    lista_de_alunos = []
+
+    def incluir_aluno(nome_do_aluno):
+    #    lista_de_alunos = []
+        lista_de_alunos.append(nome_do_aluno)
+
+    def listar_alunos ():
+        print(lista_de_alunos)
+    #___________________________________________________________________________________________________________________________________
     # Menu Operacional
 
     if texto_menu_principal != "Sair" :
@@ -70,7 +80,11 @@ while True:
         opcao_menu_operacional = int(input("\nOpção desejada: "))
 
         if opcao_menu_operacional==1: 
-            print("\nLegal, logo iremos descobrir como fazer isso, por enquanto é isso! Obrigada.\n")
+            nome_do_aluno = input("\nInsira nome do aluno a ser registrado: ")
+            incluir_aluno(nome_do_aluno)
+            print("Registro Incluído com Sucesso")
+            listar_alunos()
+            
         elif opcao_menu_operacional==2:
             print("\nLegal, logo iremos descobrir como fazer isso, por enquanto é isso! Obrigada.\n")
         elif opcao_menu_operacional==3:
@@ -97,5 +111,7 @@ print("\nEncerrando Aplicação...")
 time.sleep(1) 
 print("\nAplicação Encerrada!\n")
 
-def incluir_registro(novo_registro):
-    registro_aluno
+def incluir_aluno(nome_do_aluno):
+    lista_de_alunos = []
+    lista_de_alunos.append(nome_do_aluno)
+    print(lista_de_alunos)
