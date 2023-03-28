@@ -14,12 +14,17 @@ opcao_menu_operacional=0
 #Função de Estudantes
 
 lista_de_alunos = []
+lista_em_branco = []
 
 def incluir_aluno(nome_do_aluno):
    lista_de_alunos.append(nome_do_aluno)
 
 def listar_alunos ():
-    print(lista_de_alunos)
+    if lista_de_alunos == lista_em_branco:
+        print(" --> Não há estudantes cadastrados!")
+    else:
+        print("A lista de estudantes é: \n")
+        print(lista_de_alunos)
 
 
 #___________________________________________________________________________________________________________________________________
@@ -74,36 +79,56 @@ while execucao:
 
             retornar = input("\nDeseja realizar outra operação? Digite apenas a inicial s-sim ou n-não:  ")
             if retornar == "n":
-                execucao = False 
+                execucao = False
 
-        elif opcao_menu_principal == 2: 
+        elif opcao_menu_operacional == 3:
             time.sleep(1)
-            print("\n  Etapa Em DESENVOLVIMENTO")
+            print("\n  -> Etapa Em DESENVOLVIMENTO")
+            retornar = input("\nDeseja realizar outra operação? Digite apenas a inicial s-sim ou n-não:  ")
+            if retornar == "n":
+                execucao = False
+        
+        elif opcao_menu_operacional == 4:
+            time.sleep(1)
+            print("\n  -> Etapa Em DESENVOLVIMENTO")
+            retornar = input("\nDeseja realizar outra operação? Digite apenas a inicial s-sim ou n-não:  ")
+            if retornar == "n":
+                execucao = False
+        
+        elif opcao_menu_operacional == 5:
+            time.sleep(1)
+            print("\n  -> Etapa Em DESENVOLVIMENTO")
+            retornar = input("\nDeseja realizar outra operação? Digite apenas a inicial s-sim ou n-não:  ")
+            if retornar == "n":
+                execucao = False
+        
+        elif opcao_menu_operacional == 0:
+            retornar = "s"
 
-        elif opcao_menu_principal == 3:
-            time.sleep(1)
-            print("\n  Etapa Em DESENVOLVIMENTO")
-            
-        elif opcao_menu_principal == 4:
-            time.sleep(1)
-            print("\n  Etapa Em DESENVOLVIMENTO")
-            
-        elif opcao_menu_principal == 5:
-            time.sleep(1)
-            print("\n  Etapa Em DESENVOLVIMENTO")
-
-        elif opcao_menu_principal == 0:
-            print("\nSaindo...")
-            time.sleep(1)
-            print("3...")
-            time.sleep(1)
-            print("2...")
-            time.sleep(1)
-            print("1...")
-            time.sleep(1)
-            
         else:
-            print("Valor Inválido, Tente Novamente")
+            print("\n  --> Valor Inválido, Tente Novamente")
+            retornar = "s"
+
+    elif opcao_menu_principal == 2: 
+        time.sleep(1)
+        print("\n  -> Etapa Em DESENVOLVIMENTO")
+
+    elif opcao_menu_principal == 3:
+        time.sleep(1)
+        print("\n  -> Etapa Em DESENVOLVIMENTO")
+            
+    elif opcao_menu_principal == 4:
+        time.sleep(1)
+        print("\n  -> Etapa Em DESENVOLVIMENTO")
+            
+    elif opcao_menu_principal == 5:
+        time.sleep(1)
+        print("\n  -> Etapa Em DESENVOLVIMENTO")
+
+    elif opcao_menu_principal == 0:
+        execucao = False    
+    else:
+        print("\n  --> Valor Inválido, Tente Novamente")
                 
 print("\nEncerrando Aplicação...")
 time.sleep(1)
