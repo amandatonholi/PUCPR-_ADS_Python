@@ -24,8 +24,8 @@ def listar_alunos ():
         print(" --> Não há estudantes cadastrados!")
     else:
         print("A lista de estudantes é: \n")
-        print(lista_de_alunos)
-
+        for aluno in lista_de_alunos:
+            print("--> " , aluno)
 
 #___________________________________________________________________________________________________________________________________
 # Função Menu Principal
@@ -55,59 +55,63 @@ def menu_operacional():
 
 #___________________________________________________________________________________________________________________________________
 # Navegação nos Menus
-execucao = True
 
-while execucao:
+execucao_princ = True
+
+while execucao_princ:
     menu_principal ()
     opcao_menu_principal = int(input("\nOpção desejada: "))
     if opcao_menu_principal == 1:
-        menu_operacional()
-        opcao_menu_operacional = int(input("\nOpção desejada: "))
 
-        if opcao_menu_operacional == 1:
-            nome_do_aluno = input("\nInsira nome do aluno a ser registrado: ")
-            incluir_aluno(nome_do_aluno)
-            print("\nRegistro Incluído com Sucesso")
+        execucao_oper = True
+        while execucao_oper == True:
+            menu_operacional()
+            opcao_menu_operacional = int(input("\nOpção desejada: "))
 
-            retornar = input("\nDeseja realizar outra operação? Digite apenas a inicial s-sim ou n-não:  ")
-            if retornar == "n":
-                execucao = False 
-                                    
-        elif opcao_menu_operacional == 2:
-            print("\nOs alunos registrados atualmente na base são: \n")
-            listar_alunos()
+            if opcao_menu_operacional == 1:
+                nome_do_aluno = input("\nInsira nome do aluno a ser registrado: ")
+                incluir_aluno(nome_do_aluno)
+                print("\nRegistro Incluído com Sucesso")
 
-            retornar = input("\nDeseja realizar outra operação? Digite apenas a inicial s-sim ou n-não:  ")
-            if retornar == "n":
-                execucao = False
+                retornar = input("\nDeseja realizar outra operação? Digite apenas a inicial s-sim ou n-não:  ")
+                if retornar == "n":
+                    execucao_oper = False 
+                                        
+            elif opcao_menu_operacional == 2:
+                print("\nOs alunos registrados atualmente na base são: \n")
+                listar_alunos()
 
-        elif opcao_menu_operacional == 3:
-            time.sleep(1)
-            print("\n  -> Etapa Em DESENVOLVIMENTO")
-            retornar = input("\nDeseja realizar outra operação? Digite apenas a inicial s-sim ou n-não:  ")
-            if retornar == "n":
-                execucao = False
-        
-        elif opcao_menu_operacional == 4:
-            time.sleep(1)
-            print("\n  -> Etapa Em DESENVOLVIMENTO")
-            retornar = input("\nDeseja realizar outra operação? Digite apenas a inicial s-sim ou n-não:  ")
-            if retornar == "n":
-                execucao = False
-        
-        elif opcao_menu_operacional == 5:
-            time.sleep(1)
-            print("\n  -> Etapa Em DESENVOLVIMENTO")
-            retornar = input("\nDeseja realizar outra operação? Digite apenas a inicial s-sim ou n-não:  ")
-            if retornar == "n":
-                execucao = False
-        
-        elif opcao_menu_operacional == 0:
-            retornar = "s"
+                retornar = input("\nDeseja realizar outra operação? Digite apenas a inicial s-sim ou n-não:  ")
+                if retornar == "n":
+                    execucao_oper = False
 
-        else:
-            print("\n  --> Valor Inválido, Tente Novamente")
-            retornar = "s"
+            elif opcao_menu_operacional == 3:
+                time.sleep(1)
+                print("\n  -> Etapa Em DESENVOLVIMENTO")
+                retornar = input("\nDeseja realizar outra operação? Digite apenas a inicial s-sim ou n-não:  ")
+                if retornar == "n":
+                    execucao_oper = False
+            
+            elif opcao_menu_operacional == 4:
+                time.sleep(1)
+                print("\n  -> Etapa Em DESENVOLVIMENTO")
+                retornar = input("\nDeseja realizar outra operação? Digite apenas a inicial s-sim ou n-não:  ")
+                if retornar == "n":
+                    execucao_oper = False
+            
+            elif opcao_menu_operacional == 5:
+                time.sleep(1)
+                print("\n  -> Etapa Em DESENVOLVIMENTO")
+                retornar = input("\nDeseja realizar outra operação? Digite apenas a inicial s-sim ou n-não:  ")
+                if retornar == "n":
+                    execucao_oper = False
+            
+            elif opcao_menu_operacional == 0:
+                retornar = "s"
+                execucao_oper = False
+            else:
+                print("\n  --> Valor Inválido, Tente Novamente")
+                retornar = "s"
 
     elif opcao_menu_principal == 2: 
         time.sleep(1)
@@ -126,7 +130,7 @@ while execucao:
         print("\n  -> Etapa Em DESENVOLVIMENTO")
 
     elif opcao_menu_principal == 0:
-        execucao = False    
+        execucao_princ = False    
     else:
         print("\n  --> Valor Inválido, Tente Novamente")
                 
